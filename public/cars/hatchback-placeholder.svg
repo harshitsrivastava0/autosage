@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 420" fill="none">
+  <rect width="630" height="420" fill="#f8f9fa"/>
+  <!-- Car body -->
+  <rect x="100" y="240" width="430" height="90" rx="12" fill="#d1d5db"/>
+  <!-- Roof (hatchback shape — shorter, steeper back) -->
+  <path d="M200 240 L240 160 L420 155 L470 240 Z" fill="#9ca3af"/>
+  <!-- Wheels -->
+  <circle cx="190" cy="330" r="40" fill="#374151"/>
+  <circle cx="190" cy="330" r="20" fill="#9ca3af"/>
+  <circle cx="440" cy="330" r="40" fill="#374151"/>
+  <circle cx="440" cy="330" r="20" fill="#9ca3af"/>
+  <!-- Windows -->
+  <path d="M248 235 L268 170 L390 165 L418 235 Z" fill="#bfdbfe" opacity="0.7"/>
+  <!-- Headlight -->
+  <rect x="102" y="265" width="40" height="20" rx="4" fill="#fef3c7"/>
+  <!-- Text label -->
+  <text x="315" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#6b7280">Hatchback</text>
+</svg>

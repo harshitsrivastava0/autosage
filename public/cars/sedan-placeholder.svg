@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 420" fill="none">
+  <rect width="630" height="420" fill="#f8f9fa"/>
+  <!-- Car body -->
+  <rect x="80" y="245" width="470" height="85" rx="10" fill="#d1d5db"/>
+  <!-- Roof (sedan — longer, gradual slope) -->
+  <path d="M180 245 L220 170 L430 165 L480 245 Z" fill="#9ca3af"/>
+  <!-- Boot -->
+  <rect x="480" y="245" width="70" height="50" rx="6" fill="#b0b7c0"/>
+  <!-- Wheels -->
+  <circle cx="190" cy="330" r="40" fill="#374151"/>
+  <circle cx="190" cy="330" r="20" fill="#9ca3af"/>
+  <circle cx="460" cy="330" r="40" fill="#374151"/>
+  <circle cx="460" cy="330" r="20" fill="#9ca3af"/>
+  <!-- Windows -->
+  <path d="M228 240 L255 175 L420 170 L450 240 Z" fill="#bfdbfe" opacity="0.7"/>
+  <!-- Headlight -->
+  <rect x="82" y="268" width="38" height="18" rx="4" fill="#fef3c7"/>
+  <!-- Text label -->
+  <text x="315" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#6b7280">Sedan</text>
+</svg>

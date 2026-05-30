@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 420" fill="none">
+  <rect width="630" height="420" fill="#f8f9fa"/>
+  <!-- Car body — sleek EV shape -->
+  <rect x="90" y="235" width="450" height="95" rx="14" fill="#d1d5db"/>
+  <!-- Roof (EV — aerodynamic sloped) -->
+  <path d="M175 235 L215 158 L435 152 L490 235 Z" fill="#9ca3af"/>
+  <!-- Wheels -->
+  <circle cx="200" cy="332" r="42" fill="#374151"/>
+  <circle cx="200" cy="332" r="21" fill="#9ca3af"/>
+  <circle cx="450" cy="332" r="42" fill="#374151"/>
+  <circle cx="450" cy="332" r="21" fill="#9ca3af"/>
+  <!-- Panoramic window (EV signature) -->
+  <path d="M222 230 L248 163 L430 157 L458 230 Z" fill="#bfdbfe" opacity="0.8"/>
+  <!-- LED headlight strip -->
+  <rect x="92" y="258" width="55" height="8" rx="4" fill="#93c5fd"/>
+  <!-- Charging port indicator -->
+  <rect x="540" y="255" width="18" height="28" rx="4" fill="#22c55e"/>
+  <!-- Lightning bolt EV icon -->
+  <text x="549" y="274" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="white" font-weight="bold">⚡</text>
+  <!-- Text label -->
+  <text x="315" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#6b7280">Electric Vehicle</text>
+</svg>

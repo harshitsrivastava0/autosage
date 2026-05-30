@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/* Brand design tokens */
+@theme {
+  --color-brand-navy: #1a1a2e;
+  --color-brand-red: #e63946;
+  --color-brand-red-light: #fdf2f3;
+  --color-brand-blue: #2563eb;
+  --color-brand-surface: #f8f9fa;
+
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+}
+
+/* Tabular numbers prevent layout shift when prices update */
+.price {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Animations (all gated on reduced-motion preference) ─── */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Card entrance: slides up + fades in */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Skeleton shimmer for image placeholders */
+  @keyframes shimmer {
+    from {
+      background-position: -200% center;
+    }
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  /* Slide-in from right (chat drawer) or bottom (compare bar) */
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* Spring pop-in for badges */
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    70% {
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Rating bar width animation */
+  @keyframes barFill {
+    from {
+      width: 0;
+    }
+  }
+
+  /* Numeric count-up (used for match score) */
+  @keyframes countUp {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Typing indicator and loading dots */
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Loading orb rotation — slow, intentional */
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Utility classes that reference the keyframes */
+  .animate-fade-up {
+    animation: fadeUp 0.4s ease-out both;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      #f0f0f0 25%,
+      #e0e0e0 50%,
+      #f0f0f0 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out both;
+  }
+
+  .animate-pop-in {
+    animation: popIn 0.4s ease-out both;
+  }
+
+  .animate-bar-fill {
+    animation: barFill 0.6s ease-out both;
+  }
+
+  .animate-pulse-dot {
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
+  .animate-spin-slow-reverse {
+    animation: spin-slow 15s linear infinite reverse;
+  }
+
+  .animate-spin-medium {
+    animation: spin-slow 10s linear infinite;
+  }
+}
+
+/* Base styles */
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-inter, Arial, Helvetica, sans-serif);
+}
+
+/* Hide default scrollbar on tab bars without losing scrollability */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Chat drawer input — stays above soft keyboard on iOS */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Ensure tap targets meet 44px minimum on mobile */
+@media (max-width: 640px) {
+  button, a {
+    min-height: 44px;
+  }
+}
