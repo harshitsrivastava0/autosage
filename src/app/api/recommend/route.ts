@@ -24,9 +24,10 @@ const BodySchema = z.object({
 });
 
 /** Rule-based fallback: top 3 scored cars as a minimal shortlist */
-function buildFallbackShortlist(scored: ReturnType<typeof filterAndScore>): ShortlistItem[] {
+function buildFallbackShortlist(scored: ReturnType<typeof filterAndScore>, city: string): ShortlistItem[] {
   return scored.slice(0, 3).map((s, i) => {
-    const loan = s.car.exShowroomPrice * 0.85;
+    const onRoad = getOnRoadPrice(s.car.exShowroomPrice, city);
+    const loan = onRoad.total * 0.85;
     const r = 0.085 / 12;
     const n = 60;
     const emi = Math.round((loan * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1));
@@ -98,7 +99,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     );
   }
 
-  const shortlist = buildFallbackShortlist(scored);
+  const shortlist = buildFallbackShortlist(scored, city);
   const honourableMentions: HonourableMention[] = scored.slice(3, 5).map((s) => ({
     carId: s.car.id,
     oneLineReason: s.car.pros[0] ?? s.car.expertSummary.split(".")[0],

@@ -10,17 +10,23 @@ interface CarImageProps {
   className?: string;
 }
 
+function proxyUrl(src: string): string {
+  if (src.startsWith("https://stimg.cardekho.com/")) {
+    return `/api/car-image?url=${encodeURIComponent(src)}`;
+  }
+  return src;
+}
+
 /** Shimmer skeleton while loading; falls back to body-type SVG on error. */
 export function CarImage({ src, alt, bodyType, className = "" }: CarImageProps) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
 
   const fallback = `/cars/${bodyType}-placeholder.svg`;
-  const imgSrc = errored ? fallback : src;
+  const imgSrc = errored ? fallback : proxyUrl(src);
 
   return (
     <div className={`relative overflow-hidden bg-gray-50 ${className}`}>
-      {/* Shimmer shown until image loads */}
       {!loaded && (
         <div className="absolute inset-0 animate-shimmer" />
       )}

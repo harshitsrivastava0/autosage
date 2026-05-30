@@ -59,11 +59,6 @@ export function useAdvisor() {
         }),
       });
 
-      if (res.status === 503) {
-        dispatch({ type: "SET_ERROR", error: "AI service not configured. Please set ANTHROPIC_API_KEY." });
-        return;
-      }
-
       if (!res.ok) {
         const data = await res.json() as { error?: string };
         dispatch({ type: "SET_ERROR", error: data.error ?? "Request failed" });
