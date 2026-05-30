@@ -7,7 +7,7 @@ import { upsertSession } from "@/lib/db";
 import type { AdvisorAnswers, ShortlistItem, HonourableMention, MonthlyCost } from "@/types";
 
 const AnswersSchema = z.object({
-  budgetMin: z.number().positive(),
+  budgetMin: z.number().min(0),
   budgetMax: z.number().positive(),
   useCase: z.array(z.string()),
   fuelPreference: z.array(z.string()),

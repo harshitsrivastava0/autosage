@@ -27,7 +27,7 @@ export function useAdvisor() {
   };
 
   const submitAnswers = async (city: string) => {
-    if (!state.answers.budgetMin || !state.answers.budgetMax) {
+    if (state.answers.budgetMin == null || state.answers.budgetMax == null || state.answers.budgetMax === 0) {
       dispatch({ type: "SET_ERROR", error: "Budget is required" });
       return;
     }

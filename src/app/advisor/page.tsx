@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { Header } from "@/components/layout/Header";
 import { QuestionnaireWizard } from "@/components/advisor/QuestionnaireWizard";
 import { LoadingState } from "@/components/advisor/LoadingState";
@@ -13,7 +14,13 @@ const WIZARD_STEPS = ["city", "budget", "usecase", "preferences", "summary"] as 
 export default function AdvisorPage() {
   const { city } = useCity();
   const { sessionId } = useSession();
-  const { step, answers, shortlist, honourableMentions, error, setAnswers, setStep, submitAnswers } = useAdvisor();
+  const { step, answers, shortlist, honourableMentions, error, setAnswers, setStep, submitAnswers, reset } = useAdvisor();
+
+  // Reset wizard on every fresh page load so previous results don't persist
+  useEffect(() => {
+    reset();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSubmit = () => {
     submitAnswers(city);
