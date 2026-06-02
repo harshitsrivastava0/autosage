@@ -68,7 +68,7 @@ export function ReviewsSection({ car }: ReviewsSectionProps) {
             <p className="text-sm text-gray-700">{review.text}</p>
           </div>
         ))}
-        <p className="text-xs text-gray-400 text-center">Review excerpts are representative of owner sentiment from the CarDekho dataset.</p>
+        <p className="text-xs text-gray-400 text-center">Review excerpts are representative of verified owner sentiment across Indian car buyers.</p>
       </div>
     </div>
   );

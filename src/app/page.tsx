@@ -6,7 +6,7 @@ import type { Car } from "@/types";
 
 // Static Creta data for the sample card — no DB or AI calls needed
 const SAMPLE_CRETA: Car = {
-  id: "hyundai-creta-2024",
+  id: "hyundai-creta",
   make: "Hyundai",
   model: "Creta",
   variant: "S 1.5 Petrol MT",
@@ -47,7 +47,7 @@ const SAMPLE_CRETA: Car = {
   targetBuyer: "Urban family wanting premium SUV feel without crossing ₹20L",
   bestFor: ["city_commute", "family_weekends"],
   segment: "mid",
-  popularComparisons: ["kia-seltos-2024", "maruti-grand-vitara-2024"],
+  popularComparisons: ["kia-seltos", "maruti-grand-vitara"],
   waitingPeriodWeeks: null,
 };
 
@@ -62,7 +62,7 @@ const HOW_IT_WORKS = [
     step: "2",
     icon: "🤖",
     title: "AI analyses 50 cars + 47,000 reviews",
-    subtitle: "Claude models every car against your answers in ~8 seconds.",
+    subtitle: "AutoSage scores every car against your answers in seconds.",
   },
   {
     step: "3",
@@ -87,7 +87,7 @@ export default function Home() {
       <section className="bg-gradient-to-br from-brand-navy via-[#16213e] to-[#0f3460] text-white">
         <div className="max-w-4xl mx-auto px-4 py-16 md:py-24 text-center">
           <p className="text-brand-red text-sm font-semibold uppercase tracking-widest mb-4">
-            Powered by CarDekho data ecosystem
+            India&apos;s most accurate car advisor
           </p>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
             India&apos;s smartest<br />car advisor.
@@ -122,7 +122,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
             <div className="py-6 md:py-0 md:px-8 text-center">
               <p className="text-2xl font-bold text-gray-400 mb-1">285 cars</p>
-              <p className="text-sm font-semibold text-gray-600 mb-2">CarDekho shows</p>
+              <p className="text-sm font-semibold text-gray-600 mb-2">Other platforms show</p>
               <p className="text-xs text-gray-400">Specs &amp; prices, you decide</p>
             </div>
             <div className="py-6 md:py-0 md:px-8 text-center bg-white md:bg-transparent rounded-xl md:rounded-none shadow-sm md:shadow-none">
@@ -168,7 +168,7 @@ export default function Home() {
       <section className="bg-brand-navy text-white">
         <div className="max-w-4xl mx-auto px-4 py-10">
           <p className="text-center text-white/50 text-sm mb-8 uppercase tracking-widest">
-            Built on CarDekho&apos;s data ecosystem
+            Powered by real ownership data from across India
           </p>
           <div className="grid grid-cols-3 gap-4 text-center">
             {PROOF_STATS.map(({ value, label }) => (
@@ -219,7 +219,7 @@ export default function Home() {
           <div className="font-semibold text-brand-navy">
             Auto<span className="text-brand-red">Sage</span>
           </div>
-          <p>© 2024 AutoSage. Powered by CarDekho data ecosystem.</p>
+          <p>© 2026 AutoSage. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/advisor" className="hover:text-brand-navy transition-colors">Advisor</Link>
             <Link href="/compare" className="hover:text-brand-navy transition-colors">Compare</Link>

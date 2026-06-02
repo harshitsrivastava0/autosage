@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "AutoSage — India's Smartest Car Advisor",
   description:
     "Tell AutoSage what you need. Get 3 cars that are actually right for you — with real ownership costs, honest tradeoffs, and one-tap comparison.",
-  keywords: ["car advisor", "India", "CarDekho", "AI", "buy car"],
+  keywords: ["car advisor", "India", "AI", "buy car", "best car India"],
 };
 
 export default function RootLayout({
